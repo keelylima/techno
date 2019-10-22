@@ -167,6 +167,10 @@ body {
     font-family: "Noto Serif", serif;
 }
 
+.modal_btn.esgotado {
+    background: #808080;
+}
+
 .modal_btn:active {
     background: #808080;
 }

@@ -17,10 +17,16 @@
         <header class="header">
             <img class="logo" src="./assets/techno.svg" alt="Techno">
             <div class="carrinho_menu">
-                {{carrinhoTotal}} |
+                {{carrinhoTotal | numeroPreco}} | {{carrinho.length}}
             </div>
+            <ul>
+                <li v-for="(item,index) in carrinho">
+                    <p>{{item.nome}}</p>
+                    <button @click="removerItem(index)">X</button>
+                </li>
+            </ul>
         </header>
-        
+
         <section class="produtos">
             <div v-for="item in produtos" @click="abrirModal(item.id)" :key="item.id" class="produto">
                 <img :src="item.img" :alt="item.nome" class="produto_img" />
@@ -31,7 +37,7 @@
             </div>
         </section>
 
-          <section class="modal" v-if="produto" @click="fecharModal">
+        <section class="modal" v-if="produto" @click="fecharModal">
             <div class="modal_container">
                 <div class="modal_img">
                     <img :src="produto.img" :alt="produto.nome" />
@@ -51,7 +57,7 @@
                             <p class="avaliacao_descricao">{{avaliacao.descricao}}</p>
                             <p class="avaliacao_usuario">{{avaliacao.nome}} | {{avaliacao.estrelas}} estrelas</p>
                         </li>
-                    </ul>                
+                    </ul>
                 </div>
             </div>
         </section>
