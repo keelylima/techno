@@ -3,6 +3,8 @@ const vm = new Vue({
     data: {
         produtos: [],
         produto: false,
+        carrinho: [],
+        carrinhoTotal: 0,
     },
     filters: {
         numeroPreco(valor) {
@@ -35,6 +37,9 @@ const vm = new Vue({
             if (event.target === event.currentTarget) {
                 this.produto = false;
             }
+        },
+        adicionarItem() {
+            this.produto.estoque--;
         }
     },
     created() {
