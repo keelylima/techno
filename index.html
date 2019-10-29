@@ -19,12 +19,6 @@
             <div class="carrinho_menu">
                 {{carrinhoTotal | numeroPreco}} | {{carrinho.length}}
             </div>
-            <ul>
-                <li v-for="(item,index) in carrinho">
-                    <p>{{item.nome}}</p>
-                    <button @click="removerItem(index)">X</button>
-                </li>
-            </ul>
         </header>
 
         <section class="produtos">
@@ -59,6 +53,11 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <section class="carrinho_modal">
+            <div class="carrinho_container">
             </div>
         </section>
 
